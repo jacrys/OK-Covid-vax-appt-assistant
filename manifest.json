@@ -2,7 +2,7 @@
     "manifest_version": 2,
   
     "name": "OK COVID Vaccine Scheduler Assistant",
-    "description": "This extension filters through and hides all of the locations on the vaccine portal which currently don't have appointments, and only show those that do. This first sets the appointment search to 400 miles to get all appointments, so the page takes a few seconds to fully load.",
+    "description": "This extension filters through and hides all of the locations on the vaccine portal which currently don't have appointments.",
     "version": "1.0",
     "page_action": {
         "default_icon": {
