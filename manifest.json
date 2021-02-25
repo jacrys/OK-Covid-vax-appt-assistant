@@ -1,40 +1,44 @@
 {
     "manifest_version": 2,
   
-    "name": "Oklahoma Vaccine Scheduler Assistant",
-    "description": "This extension filters through and hides all of the locations on the vaccine portal which currently don't have appointments, and only show those that do.",
-    "version": "0.1",
-    "browser_action": {
+    "name": "OK COVID Vaccine Scheduler Assistant",
+    "description": "This extension filters through and hides all of the locations on the vaccine portal which currently don't have appointments, and only show those that do. This first sets the appointment search to 400 miles to get all appointments, so the page takes a few seconds to fully load.",
+    "version": "1.0",
+    "page_action": {
         "default_icon": {
-            "16": "images/needle16.png",
-            "32": "images/needle32.png",
-            "48": "images/needle48.png",
-            "64": "images/needle64.png",
-            "128": "images/needle128.png"
+            "16": "images/needle16w.png",
+            "32": "images/needle32w.png",
+            "48": "images/needle48w.png",
+            "64": "images/needle64w.png",
+            "128": "images/needle128w.png"
         },
-        "default_popup": "popup.html"
+        "default_popup": "popup.html",
+        "default_title": "OK COVID Vaccine Scheduler Assistant"
     },
     "icons": {
-        "16": "images/needle16.png",
-        "32": "images/needle32.png",
-        "48": "images/needle48.png",
-        "64": "images/needle64.png",
-        "128": "images/needle128.png"
+        "16": "images/needle16w.png",
+        "32": "images/needle32w.png",
+        "48": "images/needle48w.png",
+        "64": "images/needle64w.png",
+        "128": "images/needle128w.png"
     },
     "permissions": [
         "declarativeContent",
+        "contextMenus",
         "activeTab",
-        "tabs"
+        "tabs",
+        "https://vaccinate.oklahoma.gov/"
      ],
     "background": {
-        "scripts": ["js/jquery-3.5.1.min.js", "background.js"]
+        "scripts": ["js/jquery-3.5.1.min.js", "background.js", "main.js"],
+        "persistent": false
     },
      "content_scripts": [
         {
           "matches": [
             "https://vaccinate.oklahoma.gov/*"
           ],
-          "js": ["filter.js"]
+          "js": ["js/jquery-3.5.1.min.js","filter.js"]
         }
       ]
   }
