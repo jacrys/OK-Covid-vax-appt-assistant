@@ -1,0 +1,1 @@
+This extension filters through and hides all of the locations on the vaccine portal which currently don't have appointments, and only show those that do.
