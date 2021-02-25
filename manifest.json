@@ -1,0 +1,40 @@
+{
+    "manifest_version": 2,
+  
+    "name": "Oklahoma Vaccine Scheduler Assistant",
+    "description": "This extension filters through and hides all of the locations on the vaccine portal which currently don't have appointments, and only show those that do.",
+    "version": "0.1",
+    "browser_action": {
+        "default_icon": {
+            "16": "images/needle16.png",
+            "32": "images/needle32.png",
+            "48": "images/needle48.png",
+            "64": "images/needle64.png",
+            "128": "images/needle128.png"
+        },
+        "default_popup": "popup.html"
+    },
+    "icons": {
+        "16": "images/needle16.png",
+        "32": "images/needle32.png",
+        "48": "images/needle48.png",
+        "64": "images/needle64.png",
+        "128": "images/needle128.png"
+    },
+    "permissions": [
+        "declarativeContent",
+        "activeTab",
+        "tabs"
+     ],
+    "background": {
+        "scripts": ["js/jquery-3.5.1.min.js", "background.js"]
+    },
+     "content_scripts": [
+        {
+          "matches": [
+            "https://vaccinate.oklahoma.gov/*"
+          ],
+          "js": ["filter.js"]
+        }
+      ]
+  }
