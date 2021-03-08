@@ -12,10 +12,6 @@
         "128": "images/needle128w.png"
     },
     "permissions": [
-        "declarativeContent",
-        "contextMenus",
-        "activeTab",
-        "tabs",
         "https://vaccinate.oklahoma.gov/covidvaccine-location-map/"
      ],
      "content_scripts": [
